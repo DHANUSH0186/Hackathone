@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Receptionist | Clinic Queue Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="panel receptionist-dashboard">
+    <header class="dashboard-header">
+      <div>
+        <p class="auth-info">Role: <strong id="userRole">—</strong></p>
+        <p class="auth-info">User: <strong id="userDetails">—</strong></p>
+      </div>
+      <div class="dashboard-actions">
+        <a class="nav-link" href="/doctor.html">Doctor dashboard</a>
+        <a class="nav-link" href="/patient.html">Patient waiting</a>
+        <button id="logoutBtn" type="button" class="secondary">Log out</button>
+      </div>
+    </header>
+
+    <section class="dashboard-intro">
+      <h1>Receptionist workspace</h1>
+      <p>Welcome to your patient flow board. Manage admissions, call the next patient, and monitor queue pace live.</p>
+    </section>
+
+    <div class="dashboard-grid">
+      <aside class="dashboard-panel controls-panel">
+        <div class="panel-block panel-block--compact">
+          <div class="panel-title"><h2>Quick admit</h2></div>
+          <form id="addPatientForm" class="quick-form">
+            <label for="patientName">Patient full name</label>
+            <input id="patientName" name="patientName" type="text" autocomplete="off" placeholder="e.g. Maria Santos" />
+            <label for="assignedDoctor">Assign doctor</label>
+            <select id="assignedDoctor" name="assignedDoctor">
+              <option value="">Select a doctor</option>
+            </select>
+            <button type="submit" class="primary">Add patient</button>
+          </form>
+        </div>
+
+        <div class="panel-block">
+          <div class="panel-title"><h2>Ready actions</h2></div>
+          <button id="callNextBtn" class="primary full-width">Call next patient</button>
+          <div class="field-row">
+            <label for="avgTime">Average consultation</label>
+            <input id="avgTime" type="number" min="1" step="0.5" />
+            <button id="saveAvgBtn" type="button" class="secondary">Save</button>
+          </div>
+        </div>
+
+        <div id="actionStatus" class="status action-status" aria-live="polite"></div>
+      </aside>
+
+      <section class="dashboard-panel status-panel">
+        <div class="status-strip">
+          <article>
+            <span>Now seeing</span>
+            <strong id="currentToken">No patient yet</strong>
+          </article>
+          <article>
+            <span>Waiting</span>
+            <strong id="tokensAhead">0</strong>
+          </article>
+          <article>
+            <span>Doctor on duty</span>
+            <strong id="doctorName">--</strong>
+          </article>
+          <article>
+            <span>Est. wait</span>
+            <strong id="estimatedWait">0 min</strong>
+          </article>
+          <article>
+            <span>Average</span>
+            <strong id="averageMinutes">0 min</strong>
+            <small id="averageNote" class="manual-note"></small>
+          </article>
+        </div>
+
+        <div class="panel-block panel-block--flat">
+          <div class="panel-title"><h2>Queue board</h2></div>
+          <ul class="queue-list" id="queueList"></ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/receptionist.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="100%" stop-color="#EFF6FF" />
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#CBD5E1" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="ambulance" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F8FAFC" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="40" fill="url(#sky)" />
+  <rect x="0" y="420" width="800" height="180" fill="url(#road)" />
+  <circle cx="120" cy="120" r="60" fill="#FEF3C7" />
+  <path d="M60 80C66 54 92 36 120 36C148 36 174 54 180 80" stroke="#F59E0B" stroke-width="16" stroke-linecap="round" />
+  <rect x="120" y="220" width="320" height="180" rx="20" fill="#FFFFFF" stroke="#93C5FD" stroke-width="8" />
+  <rect x="140" y="260" width="80" height="110" rx="12" fill="#DBEAFE" />
+  <rect x="240" y="260" width="120" height="110" rx="12" fill="#BFDBFE" />
+  <path d="M240 310H360" stroke="#93C5FD" stroke-width="12" stroke-linecap="round" />
+  <rect x="280" y="220" width="80" height="40" rx="10" fill="#F8FAFC" />
+  <path d="M260 220C260 198 276 180 296 180H324C344 180 360 198 360 220V260H260V220Z" fill="#DBEAFE" />
+  <rect x="330" y="380" width="40" height="40" rx="20" fill="#0EA5E9" />
+  <rect x="440" y="380" width="40" height="40" rx="20" fill="#0EA5E9" />
+  <path d="M600 380H720L760 420V450H720L690 430H600V380Z" fill="#FB923C" />
+  <rect x="660" y="380" width="80" height="40" rx="12" fill="#FFFFFF" />
+  <path d="M680 395H700" stroke="#F97316" stroke-width="8" stroke-linecap="round" />
+  <path d="M635 380H760" stroke="#F97316" stroke-width="8" />
+  <path d="M720 420V450" stroke="#F97316" stroke-width="8" />
+  <path d="M600 380V420" stroke="#F97316" stroke-width="8" />
+  <path d="M720 420L760 420" stroke="#F97316" stroke-width="8" />
+  <rect x="610" y="420" width="20" height="8" rx="4" fill="#F97316" />
+  <rect x="650" y="420" width="20" height="8" rx="4" fill="#F97316" />
+  <path d="M182 370C182 345 202 325 228 325H296C322 325 342 345 342 370V420H182V370Z" fill="#F8FAFC" stroke="#93C5FD" stroke-width="8" />
+  <path d="M218 360C218 348 228 338 240 338C252 338 262 348 262 360" stroke="#0F172A" stroke-width="8" />
+  <path d="M230 338V325" stroke="#0F172A" stroke-width="8" />
+  <rect x="212" y="421" width="40" height="30" rx="10" fill="#E2E8F0" />
+  <rect x="288" y="421" width="40" height="30" rx="10" fill="#E2E8F0" />
+  <line x1="320" y1="480" x2="480" y2="480" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.5" />
+  <line x1="260" y1="530" x2="540" y2="530" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.35" />
+  <text x="150" y="150" font-size="28" fill="#2563EB" font-weight="700">Clinic Care</text>
+  <text x="150" y="185" font-size="18" fill="#475569">Fast check-in, live queue, better visits.</text>
+</svg>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinic Queue Manager Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="panel login-panel">
+    <section class="login-visual">
+      <div class="hero-copy">
+        <span class="badge">Clinic queue system</span>
+        <h1 id="heroTitle">Live queue, one portal</h1>
+        <p id="heroText">Receptionists admit patients, doctors advance consultations, and patients watch the queue live — all through one app.</p>
+
+        <div class="hero-stats" aria-label="Clinic summary stats">
+          <div class="hero-stat">
+            <span>Current patient</span>
+            <strong id="statusCurrent">T001</strong>
+          </div>
+          <div class="hero-stat">
+            <span>Waiting now</span>
+            <strong id="statusAhead">0</strong>
+          </div>
+          <div class="hero-stat">
+            <span>Est. wait</span>
+            <strong id="statusWait">0 min</strong>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/hospital-illustration.svg" alt="Hospital with doctor and ambulance illustration" />
+      </div>
+    </section>
+
+    <section class="login-card">
+      <div class="login-intro">
+        <h1 id="loginTitle">Sign in</h1>
+        <p id="loginSubtext">Select a role and enter your credentials to continue.</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="role-buttons" id="roleButtons">
+          <button type="button" class="role-btn active" data-role="receptionist">Receptionist</button>
+          <button type="button" class="role-btn" data-role="doctor">Doctor</button>
+          <button type="button" class="role-btn" data-role="patient">Patient</button>
+        </div>
+
+        <input type="hidden" id="role" name="role" value="receptionist" />
+
+        <div id="userCredentials">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username" placeholder="receptionist" />
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" />
+        </div>
+
+        <div id="patientCredentials" class="hidden">
+          <label for="token">Token</label>
+          <input id="token" name="token" type="text" autocomplete="off" placeholder="T001" />
+        </div>
+
+        <button type="submit" class="primary">Log in</button>
+        <div id="loginError" class="status"></div>
+      </form>
+
+      <div class="register-link">
+        <span>New here?</span>
+        <a href="register.html">Create account</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

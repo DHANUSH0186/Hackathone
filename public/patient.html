@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Waiting Room</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="panel patient-panel">
+    <header>
+      <div class="topbar">
+        <div>
+          <p class="auth-info">Role: <strong id="userRole">—</strong></p>
+          <p class="auth-info">Token: <strong id="userDetails">—</strong></p>
+        </div>
+        <button id="logoutBtn" type="button">Log out</button>
+      </div>
+      <h1>Waiting Room Status</h1>
+      <p>Live updates appear automatically as the queue changes.</p>
+    </header>
+
+    <section class="card patient-card">
+      <div class="status-block">
+        <span>Doctor on duty</span>
+        <strong id="doctorName">--</strong>
+      </div>
+      <div class="status-block">
+        <span>Now seeing</span>
+        <strong id="patientCurrent">--</strong>
+      </div>
+      <div class="status-block">
+        <span>Tokens ahead of you</span>
+        <strong id="patientAhead">0</strong>
+      </div>
+      <div class="status-block">
+        <span>Estimated wait</span>
+        <strong id="patientWait">0 min</strong>
+      </div>
+      <div class="status-block small">
+        <span>Average consultation time</span>
+        <strong id="patientAverage">0 min</strong>
+      </div>
+    </section>
+
+    <section class="card info-card">
+      <h2>Prescriptions</h2>
+      <p id="patientPrescription">No prescriptions have been assigned yet.</p>
+    </section>
+
+    <section class="card info-card">
+      <h2>Lab tests</h2>
+      <p id="patientLabTests">No lab tests are scheduled yet.</p>
+    </section>
+
+    <section class="card history-card">
+      <h2>Patient history</h2>
+      <ul id="patientHistory" class="history-list">
+        <li>No history available.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/patient.js"></script>
+</body>
+</html>

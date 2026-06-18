@@ -1,0 +1,14 @@
+Clinic Queue Manager Requirements
+
+REQ-001: Role-based login with receptionist, doctor, and patient flows - DONE
+REQ-002: Receptionist can admit patients and assign them to a registered doctor - DONE
+REQ-003: Doctor dashboard shows assigned queue, current patient, prescription/lab notes, and history - DONE
+REQ-004: Patient view shows assigned doctor, waiting status, prescription, lab tests, and history - DONE
+REQ-005: Live queue updates via Socket.IO for immediate frontend refresh - DONE
+REQ-006: Backend startup verified and role-protected pages enforced - DONE
+REQ-007: Persistent data storage migrated from JSON files to SQLite database - DONE
+
+Notes:
+- Application was verified running successfully on port 3002 after the database backend was added.
+- Run locally with: `PORT=3002 npm start` or free port 3000/3001 first.
+- The project is now deployable to a Node.js host with SQLite-backed persistence.

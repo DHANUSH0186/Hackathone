@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="panel doctor-panel">
+    <header>
+      <div class="topbar">
+        <div>
+          <p class="auth-info">Role: <strong id="userRole">—</strong></p>
+          <p class="auth-info">User: <strong id="userDetails">—</strong></p>
+        </div>
+        <button id="logoutBtn" type="button">Log out</button>
+      </div>
+      <h1>Doctor Dashboard</h1>
+      <p>See the current patient and upcoming queue at a glance.</p>
+    </header>
+
+    <section class="card doctor-card">
+      <div class="status-block">
+        <span>Doctor name</span>
+        <strong id="doctorName">--</strong>
+      </div>
+      <div class="status-block">
+        <span>Current patient</span>
+        <strong id="doctorCurrent">No patient in room</strong>
+      </div>
+      <div class="status-block">
+        <span>Average consultation</span>
+        <strong id="doctorAverage">0 min</strong>
+        <small id="averageNote" class="manual-note"></small>
+      </div>
+      <div class="status-block">
+        <span>Estimated wait for the next patient</span>
+        <strong id="doctorWait">0 min</strong>
+      </div>
+      <button id="completeBtn" class="primary">Complete current consultation</button>
+    </section>
+
+    <section class="card action-card">
+      <h2>Prescribe and order lab tests</h2>
+      <label for="prescriptionInput">Prescription / medicines</label>
+      <textarea id="prescriptionInput" rows="3" placeholder="Enter medicine details"></textarea>
+      <label for="labTestsInput">Lab tests required</label>
+      <textarea id="labTestsInput" rows="3" placeholder="Enter lab test instructions"></textarea>
+      <button id="savePrescriptionBtn" class="secondary">Save patient notes</button>
+    </section>
+
+    <section class="card queue-card">
+      <h2>Upcoming queue</h2>
+      <div class="queue-list" id="doctorQueue"></div>
+    </section>
+
+    <section class="card info-card">
+      <h2>Prescriptions</h2>
+      <p id="doctorPrescription">No prescriptions available yet.</p>
+    </section>
+
+    <section class="card info-card">
+      <h2>Lab tests</h2>
+      <p id="doctorLabTests">No lab tests requested yet.</p>
+    </section>
+
+    <section class="card history-card">
+      <h2>Patient history</h2>
+      <ul id="doctorPatientHistory" class="history-list">
+        <li>No history available.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/doctor.js"></script>
+</body>
+</html>

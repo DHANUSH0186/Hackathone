@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register Token | Clinic Queue Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="panel login-panel">
+    <section class="login-visual">
+      <div class="hero-copy">
+        <span class="badge">Patient registration</span>
+        <h1>Register your visit</h1>
+        <p>Enter your name to get a live queue token and follow the waiting room updates.</p>
+
+        <div class="hero-stats" aria-label="Clinic summary stats">
+          <div class="hero-stat">
+            <span>Current patient</span>
+            <strong id="statusCurrent">T001</strong>
+          </div>
+          <div class="hero-stat">
+            <span>Waiting now</span>
+            <strong id="statusAhead">0</strong>
+          </div>
+          <div class="hero-stat">
+            <span>Est. wait</span>
+            <strong id="statusWait">0 min</strong>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/hospital-illustration.svg" alt="Hospital with doctor and ambulance illustration" />
+      </div>
+    </section>
+
+    <section class="login-card">
+      <div class="login-intro">
+        <h1>Create your account</h1>
+        <p>Choose your role and register with the clinic system.</p>
+      </div>
+
+      <form id="registerForm" action="/api/register" method="post">
+        <div class="role-buttons" id="roleButtons">
+          <button type="button" class="role-btn active" data-role="receptionist">Receptionist</button>
+          <button type="button" class="role-btn" data-role="doctor">Doctor</button>
+          <button type="button" class="role-btn" data-role="patient">Patient</button>
+        </div>
+
+        <input type="hidden" id="role" name="role" value="receptionist" />
+
+        <label for="registerName">Full name</label>
+        <input id="registerName" name="name" type="text" autocomplete="name" placeholder="e.g. Maria Santos" />
+
+        <div id="staffCredentials">
+          <label for="registerUsername">Username</label>
+          <input id="registerUsername" name="username" type="text" autocomplete="username" placeholder="your username" />
+          <label for="registerPassword">Password</label>
+          <input id="registerPassword" name="password" type="password" autocomplete="new-password" placeholder="••••••••" />
+        </div>
+
+        <button type="submit" class="primary">Register</button>
+        <div id="registerError" class="status"></div>
+        <div id="registerSuccess" class="status"></div>
+      </form>
+
+      <div class="register-link">
+        <span>Already registered?</span>
+        <a href="login.html">Login instead</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/register.js"></script>
+</body>
+</html>
